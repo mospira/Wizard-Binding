@@ -3,6 +3,11 @@ from floor import *
 import math
 
 par_dir = os.path.dirname(os.path.realpath(__file__))
+"""
+This file formally defines the enemy class
+as well as functions by which enemies operate.
+
+"""
 
 
 class Enemy:
@@ -94,7 +99,17 @@ def createGraph(grid):
     return result
 
 
-def conductPathfind(g, start, target): #Modified code from Kelly Rivers, CMU 15110 Search Algorithms II Powerpoint
+def conductPathfind(g, start, target):  # Modified code from Kelly Rivers, CMU 15110 Search Algorithms II Powerpoint
+    """
+    It takes a graph, a starting node, and a target node, and returns a list of nodes that are visited
+    in order to get from the starting node to the target node
+    
+    :param g: The graph to be searched
+    :param start: The starting node
+    :param target: The node you want to get to
+    :return: The path from the start to the target.
+    """
+# A breadth first search algorithm.
     g = createGraph(g)
     visited = []
     nextNodes = [start]

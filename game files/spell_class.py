@@ -2,7 +2,10 @@ from helper import *
 import math
 
 par_dir = os.path.dirname(os.path.realpath(__file__))
+"""
+This file formally defines the Spell class.
 
+"""
 
 class Spell:
     def __init__(self, name, x, y, sprSheet_dir, coords):

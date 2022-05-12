@@ -3,7 +3,10 @@ import math
 import os
 
 par_dir = os.path.dirname(os.path.realpath(__file__))
+"""
+This file formally defines the PC(Player Character) class.
 
+"""
 
 class PC:
     def __init__(self, x, y):

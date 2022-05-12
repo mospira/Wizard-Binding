@@ -143,6 +143,12 @@ def initNewFloor(app):
 
 
 def movePlayer(app, direction):
+    """
+    It moves the player in the direction specified.
+    
+    :param app: The app object
+    :param direction: The direction the player is moving in
+    """
     player = app.player
     ms = player.ms
     if direction == "Up":
@@ -198,6 +204,13 @@ def validMove(app):
 
 
 def checkRoomTransition(app):
+    """
+    It checks if the player is within 80 pixels of the door opening, and if so, returns True and the
+    direction of the door.
+    
+    :param app: the app object
+    :return: A tuple of two values.
+    """
     player = app.player
     floorplan = app.floorplan
     row, col = app.floor.curr_room[0], app.floor.curr_room[1]
@@ -253,6 +266,11 @@ def transitionRooms(app, direction):
 
 
 def spawnEnemies(app):
+    """
+    It spawns enemies in the current room if there are no enemies in the current room.
+    
+    :param app: the app object
+    """
     gx, gy = app.floor.curr_room
     curr_stage = app.floorplan[gx][gy]
     if curr_stage.enemies == []:
@@ -272,6 +290,13 @@ def getNewSpellPos(spell):
 
 
 def castSpell(app, x, y):
+    """
+    It creates a spell object, loads the image, and adds it to a sprite group
+    
+    :param app: the app object
+    :param x: x-coordinate of the mouse
+    :param y: The y-coordinate of the mouse
+    """
     player = app.player
     if app.casting == False:
         spellName = player.spells[player.curr_spell_index]
@@ -285,6 +310,13 @@ def castSpell(app, x, y):
 
 
 def checkSpellBorders(app, spells_list):
+    """
+    It checks if the spell is within the borders of the screen, and if it is, it checks if it's in the
+    hitbox of an enemy. If it is, it deals damage to the enemy
+    
+    :param app: the main app
+    :param spells_list: a list of all the spells currently in the game
+    """
     player = app.player
     gx, gy = app.floor.curr_room
     curr_stage = app.floorplan[gx][gy]
@@ -306,11 +338,19 @@ def checkSpellBorders(app, spells_list):
 
 
 def initPathfinders(app, stage, gx, gy):
+    """
+    It takes a stage, and a grid coordinate, and then it takes all the enemies in the stage and adds
+    them to a list of pathfinders
+    
+    :param app: the app object
+    :param stage: the stage that the enemy is in
+    :param gx: the x coordinate of the stage that the enemy is in
+    :param gy: the y coordinate of the stage that the enemy is in
+    """
     floorplan = app.floorplan
     if stage.num_enemies > 0:
         homestage = floorplan[gx][gy]
         homestage.num_enemies -= 1
-        # stage.updateEnemies(-stage.num_enemies)
         for enemy in stage.enemies:
             app.pathfinders.add((enemy, (gx, gy)))
 
@@ -344,6 +384,12 @@ def checkSpawnEnemies(app):
 
 
 def updateEnemyProps(app):
+    """
+    If an enemy's hp is less than or equal to 0, remove it from the current stage, update the number of
+    enemies in the enemy's homestage, and increment the player's enemies_slain attribute
+    
+    :param app: the main app
+    """
     player, floorplan = app.player, app.floorplan
     gx, gy = app.floor.curr_room
     curr_stage = app.floorplan[gx][gy]
@@ -363,6 +409,13 @@ def updateHPSprite(app):
 
 
 def checkPlayerEnemyCollisions(app):
+    """
+    If the player is not invincible, check if the player is within a certain distance of any enemies in
+    the current room. If so, damage the player and make them invincible
+    
+    :param app: the app object
+    :return: the value of the variable "player"
+    """
     player = app.player
     if player.invinc_state == True:
         return
@@ -388,6 +441,11 @@ def checkPlayerInvinc(app):
 
 
 def updatePathfind(app):
+    """
+    It's a function that updates the pathfinding of enemies in a game.
+    
+    :param app: the app
+    """
     app.pathfind_timer += 10
     floorplan, floor = app.floorplan, app.floor
     for item in set(app.pathfinders):
@@ -435,6 +493,12 @@ def checkSpellCooldown(app):
 
 
 def performGameChecks(app):
+    """
+    It checks if the player is invincible, if the enemies should spawn, if the enemies should move, if
+    the player should move, if the player should cast a spell, and if the spell should move
+    
+    :param app: the main app
+    """
     checkSpawnEnemies(app)
     checkDescension(app)
     updateEnemyProps(app)

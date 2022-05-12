@@ -4,7 +4,12 @@ import math
 import os
 
 par_dir = os.path.dirname(os.path.realpath(__file__))
+"""
+This file formally defines each floor as a class,
+and each stage within said floor as objects of the Stage class,
+with corresponding functions.
 
+"""
 
 class Floor:
     def __init__(self, level):
@@ -14,6 +19,16 @@ class Floor:
         self.pathfinders = []
 
     def generateFloor(self, rows, cols):
+        """
+        It takes a grid, a set of visited cells, the current row and column, the number of rows and columns,
+        and the number of rooms to generate. It then generates a maze by randomly selecting a direction to
+        move in, and if the cell in that direction is not visited, it moves there and adds it to the set of
+        visited cells. It then recursively calls itself with the new row and column
+        
+        :param rows: number of rows in the grid
+        :param cols: number of columns
+        :return: A list of lists.
+        """
         grid = createGrid(8, 8)
         midRow, midCol = int((rows / 2) - 1), int((cols / 2) - 1)
         result = generateMaze(
@@ -166,6 +181,7 @@ def generateMazeHelper(grid, rooms, row, col, rows, cols, max):  # maybe use set
         :param max: the number of rooms in the maze
     :return: A 2D array of 0s and 1s.
     """
+# A recursive function that generates a maze.
     grid[row][col] = 1
     if isSolution(grid, rooms, max):
         return grid
@@ -192,12 +208,35 @@ def countRooms(grid):
 
 
 def generateMaze(grid, rooms, row, col, rows, cols, max):
+    """
+    It tries to generate a maze, and if it fails, it tries again
+    
+    :param grid: the grid that the maze is being generated on
+    :param rooms: a list of all the rooms in the maze
+    :param row: the row of the current room
+    :param col: the column of the current room
+    :param rows: number of rows in the grid
+    :param cols: number of columns in the grid
+    :param max: the maximum number of rooms to generate
+    :return: A grid with a maze.
+    """
     while countRooms(grid) < max:
-        grid = generateMazeHelper(grid, rooms, row, col, rows, cols, max)
+        try:
+            grid = generateMazeHelper(grid, rooms, row, col, rows, cols, max)
+        except:
+            continue
     return grid
 
 
 def getAdjacents(grid, row, col):
+    """
+    If the cell is not on the edge of the grid, check if the adjacent cells are not zero.
+    
+    :param grid: the grid
+    :param row: the row of the current cell
+    :param col: the column of the current cell
+    :return: A list of 4 booleans.
+    """
     result = [None, None, None, None]
     rows, cols = len(grid), len(grid[0])
     if 0 < row < rows - 1:
