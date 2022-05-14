@@ -66,7 +66,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#controls">Controls</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -104,8 +104,6 @@ A game centered around an infinitely large, and infinitely challenging dungeon. 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To simply play the game, download 'wizard-binding.exe' from [the latest release]().
-
 To view and edit game scripts and design documents - the following applies.
 
 ### Prerequisites
@@ -117,34 +115,29 @@ To view and edit game scripts and design documents - the following applies.
   python3 -m pip install --upgrade Pillow
   ```
 * Optional
-  * Download the latest version of [GIMP](https://www.gimp.org/downloads/) to access design documents.
+  * Download and install the latest version of [GIMP](https://www.gimp.org/downloads/) to access design documents.
+  * Download and install the font [I pixel u](https://www.dafont.com/i-pixel-u.font).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/mospira/wizard-binding.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. Download the source code from [the latest release](https://github.com/mospira/Wizard-Binding/releases)
+2. Extract 'Wizard-Binding-X.X.X.zip' a desired location.
+  * Make sure to keep files in their original directories
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Controls
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+* WASD to move your character
+* Aim with your mouse and left click to shoot a fireball.
+* Spacebar to view player statistics.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -153,12 +146,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/mospira/wizard-binding/issues) for a full list of proposed features (and known issues).
+- [ ] Rewards for clearing stages
+    - [ ] Increased health
+    - [ ] Increased spell damage
+- [ ] Expanded player mechanics
+    - [ ] An ability which allows the player character to teleport a short distance
+    - [ ] Additional spells
+- [ ] Sufficient enemy variety
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -166,12 +160,7 @@ See the [open issues](https://github.com/mospira/wizard-binding/issues) for a fu
 
 <!-- CONTRIBUTING -->
 ## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
@@ -194,7 +183,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Mussa Abbo - mospira.dev@gmail.com
+Mussa - mospira.dev@gmail.com
 
 Project Link: [https://github.com/mospira/wizard-binding](https://github.com/mospira/wizard-binding)
 
@@ -205,9 +194,10 @@ Project Link: [https://github.com/mospira/wizard-binding](https://github.com/mos
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* Mage spritesheet created by [AntumDeluge](https://opengameart.org/users/antumdeluge) on OpenGameArt.
+* Amazing tileset and visual assets developed by [szadi art.](https://szadiart.itch.io/).
+* Skeleton spritesheet created by [Reemax](https://opengameart.org/users/reemax) on OpenGameArt.
+* Graphics file provided by the [15-112 course materials](https://www.cs.cmu.edu/~112/index.html) at Carnegie Mellon University.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
