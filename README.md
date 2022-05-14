@@ -198,7 +198,7 @@ Project Link: [https://github.com/mospira/wizard-binding](https://github.com/mos
 * Amazing tileset and visual assets developed by [szadi art.](https://szadiart.itch.io/).
 * Skeleton spritesheet created by [Reemax](https://opengameart.org/users/reemax) on OpenGameArt.
 * Graphics file provided by the [15-112 course materials](https://www.cs.cmu.edu/~112/index.html) at Carnegie Mellon University.
-
+* Inspiration from games like The Binding of Issac and The Legend of Zelda
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
